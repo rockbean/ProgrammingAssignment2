@@ -12,7 +12,7 @@
 # >sample$getCache()
 ################################################
 
-# makeCacheMatrix - Create a vector, which is a list containing a function to cache a Matrix 
+# makeCacheMatrix - Creates a special "matrix" object that can cache its inverse 
 # @x: The data matrix
 # Returns: A list contains functions: set, get, setCache, getCache
 # 1) set, set up the data matrix and cache matrix
@@ -40,8 +40,8 @@ makeCacheMatrix <- function(x = matrix()) {
        getCache = getCache)
 }
 
-# cacheSolve - Compute the inverse of a matrix and cache that
-# @x: The vector created by makeCacheMatrix
+# cacheSolve - computes the inverse of the special "matrix" returned by makeCacheMatrix above
+# @x: The object created by makeCacheMatrix
 # Returns: Either the cached matrix or the inverse of the data matrix if there isn't a cached one
 # Caution: The data matrix must be a square invertible one
 
